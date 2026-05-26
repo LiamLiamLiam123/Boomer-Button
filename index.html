@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boomer Detector</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: black;
+            color: red;
+        }
+
+        button {
+            padding: 25px 40px;
+            font-size: 25px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧓 BOOMER DETECTOR</h1>
+
+    <button onclick="boom()">SCAN</button>
+
+    <h2 id="result"></h2>
+
+    <!-- sound -->
+    <audio id="sound" src="https://www.myinstants.com/media/sounds/vine-boom.mp3"></audio>
+
+    <script>
+        function boom() {
+            // ALWAYS says boomer
+            document.getElementById("result").innerText = "🚨 BOOMER DETECTED 🚨";
+
+            // play sound
+            const sound = document.getElementById("sound");
+            sound.play();
+
+            // scream BOOMER
+            let count = 0;
+            const interval = setInterval(() => {
+                alert("BOOMER");
+                count++;
+                if (count >= 3) {
+                    clearInterval(interval);
+                }
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
